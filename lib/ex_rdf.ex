@@ -1,0 +1,2 @@
+defmodule ExRdf do
+end
