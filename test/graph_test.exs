@@ -13,7 +13,7 @@ defmodule GraphTest do
       {:subject, %{
           "http://1.com" => {
             :predicate, %{"http://1.com/b" => MapSet.new(["test2"]), "http://1.com/a" =>
-              MapSet.new(["test1"])}
+              MapSet.new(["test1", ["test3", "test4"]])}
           }
         }
       }
@@ -28,7 +28,7 @@ defmodule GraphTest do
           "http://1.com" => {
             :predicate, %{
               "http://1.com/b" => MapSet.new(["test2"]),
-              "http://1.com/a" => MapSet.new(["test", "test1"])
+              "http://1.com/a" => MapSet.new(["test", "test1", ["test3", "test4"]])
             }
           }
         }
@@ -36,6 +36,6 @@ defmodule GraphTest do
   end
 
   test "size", %{graph2: graph} do
-    assert Graph.size(graph) == 2
+    assert Graph.size(graph) == 3
   end
 end
